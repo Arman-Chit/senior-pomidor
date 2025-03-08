@@ -36,7 +36,12 @@ student= {"name":"Ivan", "age": 20, "greade":"A"}#2.2.6 Задача 10
 print(student["name"])
 
 student= {"name":"Ivan", "age": 20, "greade":"A"}#2.2.6 Задача 11
-print("greade" in student)
+if "greade" in student:
+    print("Ключ", 'greade', "найден в словаре")
+else:
+    print("Ключ", 'greade', "не найден в словаре")
+
+    print("greade" in student)
 
 student = {"name" : "Ivan",                     #2.2.6 Задача 12
            "address" :
