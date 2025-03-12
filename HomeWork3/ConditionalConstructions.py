@@ -16,6 +16,7 @@ check_score(score)
 number = int(input("Введите число: "))
 print(f"Число {number} является четным" if number % 2 == 0 else f"Число {number} является нечетным")
 
+
 # Задача 3
 num1 = int(input("Введите первое число: "))
 num2 = int(input("Введите второе число: "))
@@ -27,6 +28,7 @@ def find_max(num1, num2):
 max_number = find_max(num1,num2)
 print(f"Максимальное из чисел {num1} и {num2}: {max_number}")
 
+
 # Задача 4
 number = int(input("Введите число: "))
 def check_number(number):
@@ -36,6 +38,7 @@ def check_number(number):
     else:
         print(f"Число {number} отрицательное")
 check_number(number)
+
 
 #Задача 5
 user_string = input("Введите строку: ")

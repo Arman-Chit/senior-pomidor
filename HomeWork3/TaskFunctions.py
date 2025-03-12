@@ -17,6 +17,7 @@ def convert_seconds(seconds):
 hours, minutes, remaining_seconds = convert_seconds(seconds)
 print(f'В {seconds} секундах содержится {hours} час(ов) и {minutes} минут(ы)')
 
+
 Задача 3
 number = int(input("Введите число: "))
 exponent = int(input("Введите степень: "))
@@ -24,6 +25,7 @@ exponent = int(input("Введите степень: "))
 def power_of(number, exponent):
     return number ** exponent
 print(f'Число {number} в степени {exponent} равно {power_of(number, exponent)} ')
+
 
 #Задача 4
 def count_items(*args):
