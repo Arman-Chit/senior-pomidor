@@ -1,7 +1,7 @@
 #Задача 1
 lst = input("Введите значения через запятую: ").split(',')
 
-if all(item.isdigit() for item in lst):
+if all(item.isdigit() for i tem in lst):
     lst = list(map(int, lst))
 def get_unique_elements(lst):
     return list(set(lst))
@@ -30,4 +30,3 @@ def get_unique_vowels(s):
     return unique_vowels
 
 print(get_unique_vowels(s))
-
