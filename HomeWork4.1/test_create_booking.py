@@ -36,7 +36,7 @@ def test_partial_update_booking(auth_session, booking_data):
     patch_data = {"lastname": "PatchedLastName"}
     patch_response = auth_session.patch(f"{BASE_URL}/booking/{booking_id}", json=patch_data)
     assert patch_response.status_code == 200, "Ошибка: частичное обновление не выполнено"
-
+    print(patch_data)
 
 def test_delete_booking(auth_session, booking_data):
     """Тест удаления бронирования (DELETE /booking/{booking_id})"""
