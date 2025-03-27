@@ -2,7 +2,7 @@ import pytest
 import requests
 
 
-from HomeWork4.constant import headers, BASE_URL
+from HomeWork4_2.constant import headers, BASE_URL
 from faker import Faker
 
 
@@ -24,7 +24,7 @@ def auth_session():
 
 
 @pytest.fixture()
-def booking_data():
+def item_data():
     return {
             "firstname": faker.first_name(),
             "lastname": faker.last_name(),
