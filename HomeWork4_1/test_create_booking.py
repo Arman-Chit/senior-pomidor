@@ -59,4 +59,4 @@ def test_update_nonexistent_booking(auth_session):
     nonexistent_id = 9999999999
     updated_data = {"firstname": "Test"}
     response = auth_session.put(f"{BASE_URL}/booking/{nonexistent_id}", json=updated_data)
-    assert response.status_code == 400, "Ошибка: сервер не вернул 404 при обновлении несуществующего бронирования"
+    assert response.status_code == 400, "Ошибка: сервер не вернул 400 при обновлении несуществующего бронирования"
