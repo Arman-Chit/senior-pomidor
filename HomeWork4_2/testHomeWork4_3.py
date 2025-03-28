@@ -1,11 +1,5 @@
-from http.client import responses
-
 import requests
 from constant import base_url
-from constant import data
-from constant import put_update_data
-from constant import HEADERS
-
 
 class TestCases():
 
