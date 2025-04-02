@@ -1,31 +1,28 @@
-# Задача: "Наибольший общий префикс (приставка)"
-# Условие:
-# Напишите функцию, которая находит наибольший общий префикс среди массива строк.
+# Дан массив целых чисел nums. Верните третье максимальное число в этом массиве. Если третьего максимального числа нет, верните максимальное число.
 #
-# Если общего префикса нет, верните пустую строку "".
+# Примеры:
+# Ввод : nums = [3, 2, 1]
+# Вывод : 1
+# Объяснение : Первое максимальное число — 3, второе — 2, третье — 1.
 #
-# Пример 1:
-# Вход: strs = ["flower", "flow", "flight"]
-# Выход: "fl"
-# Объяснение: Наибольший общий префикс для всех строк — это "fl".
+# Ввод : nums = [1, 2]
+# Вывод : 2
+# Объяснение : В массиве всего два уникальных числа, поэтому возвращается максимальное число — 2.
 #
-# Пример 2:
-# Вход: strs = ["dog", "racecar", "car"]
-# Выход: ""
-# Объяснение: Среди данных строк нет общего префикса.
-
-def max_prefix(word_list):
-    common_prefix = []
-    min_len = len(min(word_list, key=len))
-    for i in range(min_len):
-        temp_prefix = set()
-        for word in word_list:
-            temp_prefix.add(word[:i])
-        if len(temp_prefix) == 1:
-            common_prefix = list(temp_prefix)[0]
-    return common_prefix
+# Ввод : nums = [2, 2, 3, 1, 3]
+# Вывод : 1
+# Объяснение : Первое максимальное число — 3, второе — 2, третье — 1.
 
 
-strs = ["flower", "flow", "flight"]
-print('"' + max_prefix(strs) + '"')
+def max_of_3(numlist):
+    if len(numlist) < 3:
+        return max(numlist)
+    else:
+        numset = set(numlist)
+        if len(numset) < 3:
+            return max(numset)
+        else:
+            return sorted(numset)[-3]
 
+# list = ...
+# print(max_of_3([list]))
