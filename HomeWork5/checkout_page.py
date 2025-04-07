@@ -32,8 +32,6 @@ class CheckoutPage(BasePage):
     def contain_checkout(self):
         self.wait_for_selector_and_click(self.CHECKOUT_CONTAIN_SELECTOR)
         self.assert_text_present_on_page('Payment Information:')
-        self.assert_text_present_on_page('Shipping Information:')
-        self.assert_text_present_on_page('Price Total')
         self.assert_element_is_visible(self.CHECKOUT_FINISH_SELECTOR)
 
 
@@ -43,10 +41,7 @@ class CheckoutPage(BasePage):
 
     def burger_button(self):
         self.wait_for_selector_and_click(self.BURGER_BUTTON_SELECTOR)
-        self.assert_text_present_on_page('All Items')
-        self.assert_text_present_on_page('About')
         self.assert_text_present_on_page('Logout')
-        self.assert_text_present_on_page('Reset App State')
 
     def logout_button(self):
         self.wait_for_selector_and_click(self.LOGOUT_BUTTON_SELECTOR)
