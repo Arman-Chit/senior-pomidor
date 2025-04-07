@@ -34,6 +34,15 @@ class TestCases():
         get_deleted_item = auth_session.get(f"{base_url}/items/{id}")
         assert get_deleted_item.status_code != 200
 
+        def test_put_item(self, item_data, auth_session):
+            if not self.__class__.item_id:
+                pytest.skip("Необходимо сначала создать элемент")
+            url = f"{self.endpoint}/{self.__class__.item_id}"
+            put_response = auth_session.put(url, {self.__class__.item_id}, json=item_data)
+            assert put_response.status_code == 200, "Данные элемента польностью не обновились"
+            put_item = put_response.json()
+            assert put_item["title"] == item_data["title"], "Заголовок не обно
+
     def test_create_item_without_auth(self, item_data):
         response = requests.post(f"{base_url}/items/", json=item_data)
         assert response.status_code == 401, "Ошибка: API должно отклонять запрос без авторизации"

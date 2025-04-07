@@ -1,28 +1,32 @@
-# Дан массив целых чисел nums. Верните третье максимальное число в этом массиве. Если третьего максимального числа нет, верните максимальное число.
+# Даны две строки s и t, состоящие из строчных букв. Строка t получается путем случайного перемешивания строки s с добавлением одного дополнительного символа в случайную позицию.
+#
+# Найти этот дополнительный символ.
 #
 # Примеры:
-# Ввод : nums = [3, 2, 1]
-# Вывод : 1
-# Объяснение : Первое максимальное число — 3, второе — 2, третье — 1.
+# Вход: s = "abcd", t = "abcde"
+# Выход: "e"
 #
-# Ввод : nums = [1, 2]
-# Вывод : 2
-# Объяснение : В массиве всего два уникальных числа, поэтому возвращается максимальное число — 2.
+# Вход: s = "aabbc", t = "abacbb"
+# Выход: "c"
+
+
+# def find_extra_char(s: str, t: str) -> str:
+#     return chr(sum(map(ord, t)) - sum(map(ord, s)))
 #
-# Ввод : nums = [2, 2, 3, 1, 3]
-# Вывод : 1
-# Объяснение : Первое максимальное число — 3, второе — 2, третье — 1.
+# # Примеры вызова:
+# print(find_extra_char("abcd", "abcde"))    # e
+# print(find_extra_char("aabbc", "abacbb"))  # c
 
+def find_extra_char(s: str, t: str) -> str:
+    s_sorted = sorted(s)
+    t_sorted = sorted(t)
 
-def max_of_3(numlist):
-    if len(numlist) < 3:
-        return max(numlist)
-    else:
-        numset = set(numlist)
-        if len(numset) < 3:
-            return max(numset)
-        else:
-            return sorted(numset)[-3]
+    for ch1, ch2 in zip(s_sorted, t_sorted):
+        if ch1 != ch2:
+            return ch2
+    return t_sorted[-1]  # если все символы до последнего совпали, то последний — лишний
 
-# list = ...
-# print(max_of_3([list]))
+print(find_extra_char("abcd", "abcde"))      # e
+print(find_extra_char("aabbc", "abacbb"))    # c
+print(find_extra_char("xyz", "xzyq"))        # q
+
