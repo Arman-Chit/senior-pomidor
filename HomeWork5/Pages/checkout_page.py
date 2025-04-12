@@ -1,4 +1,4 @@
-from base_page import BasePage
+from HomeWork5.Pages.base_page import BasePage
 
 class CheckoutPage(BasePage):
     CHECKOUT_BUTTON_SELECTOR = '[data-test="checkout"]'
